@@ -1,0 +1,7 @@
+.example-container{
+  height: 470px;
+  overflow: auto;
+}
+.mat-table{
+    width: 100%;
+}

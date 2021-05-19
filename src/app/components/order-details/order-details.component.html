@@ -1,0 +1,46 @@
+
+<div class="example-container mat-elevation-z8" >
+    <table mat-table [dataSource]="dataSource" >
+      <!-- Customer Name Column -->
+      <ng-container matColumnDef="customer_name">
+        <th mat-header-cell *matHeaderCellDef>Customer Name </th>
+        <td mat-cell *matCellDef="let element" (click)="nevigateToDetails(element)"> 
+          {{element.customer}}</td>
+      </ng-container>
+    
+      <!-- No. Of Items Column -->
+      <ng-container matColumnDef="no_of_items">
+        <th mat-header-cell *matHeaderCellDef>No. Of Items</th>
+        <td mat-cell *matCellDef="let element" (click)="nevigateToDetails(element)"> {{element.items}} </td>
+      </ng-container>
+    
+      <!--  Total Amount Column -->
+      <ng-container matColumnDef="total_amount">
+        <th mat-header-cell *matHeaderCellDef> Total Amount </th>
+        <td mat-cell *matCellDef="let element" (click)="nevigateToDetails(element)"> 
+          {{element.amount}}  </td>
+      </ng-container>
+    
+      <!--  Status Of Order Column -->
+      <ng-container matColumnDef="status" >
+        <th mat-header-cell *matHeaderCellDef> Status Of Order </th>
+        <td mat-cell *matCellDef="let element" (click)="nevigateToDetails(element)"> 
+       {{element.status}} </td>
+      </ng-container>
+      <!-- action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
+        <td mat-cell *matCellDef="let element" style="text-align: right"> 
+            <button mat-raised-button  (click)="onChangeStatus(element)" >
+                Change Status
+            </button>
+        </td>
+      </ng-container>
+    
+    
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky:true"></tr><br>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+      ></tr>
+    </table>
+  </div>

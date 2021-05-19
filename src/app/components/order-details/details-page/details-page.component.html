@@ -1,0 +1,41 @@
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around left" fxLayoutGap="5px"
+     >
+        <mat-card  fxFlex="calc(33%-200px)" fxFlex.sm="calc(50%-25px)" >
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image mail-icon3"></div>   
+            <mat-card-title>Customer Details</mat-card-title>
+            <mat-card-subtitle>Customer Name:<p>{{currentOrder.customer}}</p></mat-card-subtitle>
+            <mat-card-subtitle>Delivery Address: <p>{{currentOrder.address}}</p></mat-card-subtitle>
+          </mat-card-header>
+         
+        </mat-card>
+        <mat-card  fxFlex="calc(33%-200px)" fxFlex.sm="calc(50%-25px)" style="display: flex;" >
+          <mat-card-header>
+            <mat-card-title>Order</mat-card-title>
+              <mat-card-subtitle >
+                <img src="../../../../assets/veg-pizza-500x500.png" width="150px" >   
+              </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+          <mat-card  fxFlex="calc(33%-200px)" fxFlex.sm="calc(50%-25px)" class="inside_card">
+            <mat-card-header *ngFor="let item of currentOrder.item_name">  
+              <!-- <ng-container > -->
+              <mat-card-subtitle>
+                <p>Food Item:{{item.pizza_type}}</p>
+              </mat-card-subtitle>
+              <mat-card-subtitle>
+                <p>Price: {{item.price}}</p>
+              </mat-card-subtitle>
+              <mat-card-subtitle>
+                <p>Total No. Of Items: {{item.quantity}}</p>
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>Total Ammount: {{currentOrder.total_price}}</p>
+            </mat-card-content>
+          </mat-card>
+        </mat-card-content>
+        </mat-card>
+       
+
+      </div>

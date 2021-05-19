@@ -1,0 +1,14 @@
+<div class="main">
+    <h3>Change Status Of Order</h3>
+    <mat-form-field appearance="none">
+        <mat-label>Select Status</mat-label>
+        <mat-select [(value)]="selected">
+        <mat-option value="Order Received">Order Received</mat-option>
+        <mat-option value="Preparing">Preparing</mat-option>
+        <mat-option value="Ready to Serve">Ready to Serve</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div >
+    <button mat-raised-button class="example-button-row" (click)='updateStatus()'>Change Status</button>
+</div>
